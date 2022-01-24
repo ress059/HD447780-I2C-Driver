@@ -184,12 +184,14 @@ static void HD44780_Send_Data(HD44780_HandleTypeDef *Display_Handle, uint8_t Com
   */
 static void HD44780_Error_Handler(HD44780_HandleTypeDef *Display_Handle)
 {
+	__disable_irq();
 	while (Display_Handle->State != HD44780_READY) {
-		/* IMPLEMENT FUNCTION HOWEVER YOU WANT */
+		/* USER CODE BEGIN */
 
 		/*Display_Handle->State = HD44780_READY;*/
 	}
-
+	/*__enable_irq(); */
+	/* USER CODE END */
 }
 
 /**

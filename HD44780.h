@@ -18,20 +18,20 @@
 #include <string.h>
 
 /* ####################### USER DEFINES ############################### */
-#define HD44780_NUM_ROWS 		2
-#define HD44780_NUM_COLS 		16
-#define HW061_I2C_ADDR 			(0x27<<1) /* PCF8574 (pg. 13) */
+#define HD44780_NUM_ROWS        2
+#define HD44780_NUM_COLS        16
+#define HW061_I2C_ADDR          (0x27<<1) /* PCF8574 (pg. 13) */
 
 /* ####################### DRIVER DEFINES ############################### */
 /* I2C Control bits */
-#define HD44780_RS				(1 << 0)
-#define HD44780_RW        		(1 << 1)
-#define HD44780_EN        		(1 << 2)
-#define HD44780_BACKLIGHT 		(1 << 3)
-#define HD44780_FUNCTION_SET 	(1 << 5)
+#define HD44780_RS              (1 << 0)
+#define HD44780_RW              (1 << 1)
+#define HD44780_EN              (1 << 2)
+#define HD44780_BACKLIGHT       (1 << 3)
+#define HD44780_FUNCTION_SET    (1 << 5)
 
 /* Misc */
-#define HD44780_NUM_ELEMENTS	(HD44780_NUM_ROWS * HD44780_NUM_COLS)
+#define HD44780_NUM_ELEMENTS    (HD44780_NUM_ROWS * HD44780_NUM_COLS)
 
 /* ####################### Enums ############################### */
 typedef enum {
@@ -61,10 +61,10 @@ typedef enum {
 /* ####################### Structs ############################### */
 typedef struct {
 	I2C_HandleTypeDef       *HW061_I2C_Handle;
-	uint8_t 				Cursor_Position[2];
-	char 					Text[HD44780_NUM_ELEMENTS];
-	HD44780_State			State;
-	LCD1602_State			PowerState;
+	uint8_t                 Cursor_Position[2];
+	char                    Text[HD44780_NUM_ELEMENTS];
+	HD44780_State           State;
+	LCD1602_State           PowerState;
 } HD44780_HandleTypeDef;
 
 
